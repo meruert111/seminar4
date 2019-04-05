@@ -1,11 +1,15 @@
-from mytree import BSTMap
+from mytree import MyTree, insert, create, print_tree
 
-folder = open('words_36.txt','r')
-lines=folder.readlines()
+with open("words_36.txt") as file:
+    data = file.readlines()
 
-treeInst = BSTMap()
-treeInst._bstRemove(1,3)
-treeInst._bstMinimum( )
+words = []
 
-print(treeInst.print())
-    
+for i in range(len(data)-1):
+    data[i] = data[i][:len(data[i]) - 1]
+    words.append(data[i])
+
+b = MyTree(words)
+insert(b, words)
+tree = create(words)
+print_tree(tree)
